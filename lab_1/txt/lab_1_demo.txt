@@ -1,0 +1,14 @@
+Clear txt
+Add txt
+Tazar 125 50 Heal 0.37 27/12/2018 18:39:00
+Add txt
+Valeska 200 140 Paralyze 0.70 27/12/2018 18:40:00
+Add txt
+m 1 1 q 1 1/1/1 1:1:1
+Print txt
+Delete txt
+m 1 1 q 1 1/1/1 1:1:1 27
+Print txt
+Find txt name
+Val
+Find txt type Heal

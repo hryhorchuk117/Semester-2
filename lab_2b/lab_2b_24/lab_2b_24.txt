@@ -1,0 +1,14 @@
+3 2 1 +
+.
+PICK 
+1
+ROLL 
+1
+.
+2 MOD
+New_operation
+++
+1 +
+2 ++
+.
+Stop

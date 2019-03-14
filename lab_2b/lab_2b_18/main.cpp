@@ -19,7 +19,6 @@ T Read(bool interactive, std::ifstream& in, T& t) {
 }
 
 Polynomial ReadPol(bool interactive, std::ifstream& in) {
-    //std::cout << "STaRT" << std::endl;
     Polynomial res;
     int length = Read(interactive, in, length);
     for (int i = 0; i < length; ++i) {
@@ -27,7 +26,6 @@ Polynomial ReadPol(bool interactive, std::ifstream& in) {
         double coef = Read(interactive, in, coef);
         res.Add(degree, coef);
     }
-    //std::cout << "FINISH" << std::endl;
     return res;
 }
 

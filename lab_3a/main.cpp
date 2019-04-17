@@ -57,7 +57,6 @@ int main() {
         std::vector<std::vector<int>> vec;
         for (int i = 1; i <= N; i *= 2) {
             Benchmark(i, vec);
-            cout << "OK, " << " i == " << i << endl;
         }
     }
 

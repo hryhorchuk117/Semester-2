@@ -36,10 +36,8 @@ void Benchmark(int n, std::vector<std::vector<int>>& vec) {
     } else {
         for (int i = n / 2; i < n; ++i) {
             vec.push_back(randomVector(10000));
-            //std::cout << "vec.size == " << vec.size() << std::endl;
         }
     }
-        //std::cout << "size == " << vec.size() << std::endl;
     std::fstream out("benchmark_3a.txt", std::ios::app);
 
     void (*selectionSort_ptr)(std::vector<int>&, std::vector<int>::iterator,
@@ -57,8 +55,6 @@ void Benchmark(int n, std::vector<std::vector<int>>& vec) {
     void (*sort_ptr)(std::vector<int>&, std::vector<int>::iterator,
                      std::vector<int>::iterator, bool) = sort_std;
 
-
-    //std::cout << "OUT" << std::endl;
 
     out  << std::setw(9) << n
          << std::setw(12) << testSort(vec, selectionSort_ptr)

@@ -1,5 +1,6 @@
 #include "benchmark.h"
 #include "sort.h"
+#include "struct.h"
 
 #include <iostream>
 #include <vector>
@@ -21,9 +22,10 @@ int main() {
                 return 0;
             }
 
-            vector<int> vec;
+            vector<Date> vec;
             in >> vec;
-            vector<vector<int>> vecs;
+            cout << vec << endl;
+            vector<vector<Date>> vecs;
             for (int i = 0; i < 4; ++i) {
                 vecs.push_back(vec);
             }
@@ -54,7 +56,7 @@ int main() {
             << "combined"<< std::setw(12) << "std::sort" << std::endl << std::endl;
 
         int N = 256;
-        std::vector<std::vector<int>> vec;
+        std::vector<std::vector<Date>> vec;
         for (int i = 1; i <= N; i *= 2) {
             Benchmark(i, vec);
         }

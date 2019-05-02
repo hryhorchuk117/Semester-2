@@ -20,7 +20,7 @@ std::istream& operator>>(std::istream& in, std::vector<T>& vec) {
     int n;
     in >> n;
     for (int i = 0; i < n; ++i) {
-        int item;
+        T item;
         in >> item;
         vec.push_back(item);
     }

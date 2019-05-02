@@ -1,17 +1,23 @@
 #pragma once
 
 #include "sort.h"
+#include "struct.h"
 
 #include <fstream>
 #include <chrono>
 #include <iomanip>
 #include <algorithm>
 
+Date randomDate() {
+    Date d(randomInt(1, 30), randomInt(1, 12), randomInt(1, 2018),
+           randomInt(0, 24), randomInt(0, 60), randomInt(0, 60));
+    return d;
+}
 
-std::vector<int> randomVector(int size) {
-    std::vector<int> res;
+std::vector<Date> randomVector(int size) {
+    std::vector<Date> res;
     while (res.size() < size) {
-        res.push_back(randomInt(-100000, 100000));
+        res.push_back(randomDate());
     }
     return res;
 }
@@ -30,7 +36,7 @@ double testSort(std::vector<T> vec, func sort ) {
     return elapsed.count();
 }
 
-void Benchmark(int n, std::vector<std::vector<int>>& vec) {
+void Benchmark(int n, std::vector<std::vector<Date>>& vec) {
     if (vec.empty()) {
         vec.push_back(randomVector(10000));
     } else {
@@ -40,20 +46,20 @@ void Benchmark(int n, std::vector<std::vector<int>>& vec) {
     }
     std::fstream out("benchmark_3a.txt", std::ios::app);
 
-    void (*selectionSort_ptr)(std::vector<int>&, std::vector<int>::iterator,
-                std::vector<int>::iterator, bool) = selectionSort;
+    void (*selectionSort_ptr)(std::vector<Date>&, std::vector<Date>::iterator,
+                std::vector<Date>::iterator, bool) = selectionSort;
 
-    void (*quickSort_ptr)(std::vector<int>&, std::vector<int>::iterator,
-                              std::vector<int>::iterator, bool) = quickSort;
+    void (*quickSort_ptr)(std::vector<Date>&, std::vector<Date>::iterator,
+                          std::vector<Date>::iterator, bool) = quickSort;
 
-    void (*mergeSort_ptr)(std::vector<int>&, std::vector<int>::iterator,
-                          std::vector<int>::iterator, bool) = mergeSortIter;
+    void (*mergeSort_ptr)(std::vector<Date>&, std::vector<Date>::iterator,
+                          std::vector<Date>::iterator, bool) = mergeSortIter;
 
-    void (*combinedSort_ptr)(std::vector<int>&, std::vector<int>::iterator,
-                          std::vector<int>::iterator, bool) = combinedSort;
+    void (*combinedSort_ptr)(std::vector<Date>&, std::vector<Date>::iterator,
+                             std::vector<Date>::iterator, bool) = combinedSort;
 
-    void (*sort_ptr)(std::vector<int>&, std::vector<int>::iterator,
-                     std::vector<int>::iterator, bool) = sort_std;
+    void (*sort_ptr)(std::vector<Date>&, std::vector<Date>::iterator,
+                     std::vector<Date>::iterator, bool) = sort_std;
 
 
     out  << std::setw(9) << n

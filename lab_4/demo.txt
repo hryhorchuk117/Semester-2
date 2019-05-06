@@ -1,0 +1,53 @@
+5
+5
+
+bin
+1
+3
+
+bin
+1
+7
+
+bin
+1
+6
+
+bin
+1
+10
+
+bin
+3
+
+notbin
+1
+4 0.6
+
+notbin
+1
+2 0.7
+
+notbin
+1
+6 0.9
+
+notbin
+1
+2 0.3
+
+notbin
+1
+3 0.5
+
+notbin
+2
+
+notbin
+3
+2 0.5
+
+notbin
+2
+
+Exit

@@ -51,8 +51,7 @@ int main() {
         if (treeType == "bin") {
             write("Choose the operation :\n", interactive);
             write("Add node - 1\n", interactive);
-            write("Print tree - 2\n", interactive);
-            write("Print vector - 3\n", interactive);
+            write("Print vector - 2\n", interactive);
             int op;
             read(op, interactive);
             switch(op) {
@@ -65,11 +64,6 @@ int main() {
                     break;
                 }
                 case 2: {
-                    //printTree(headBinary);
-                    cout << '\n';
-                    break;
-                }
-                case 3: {
                     vector<binaryTree> vec = presentation(headBinary, vec);
                     cout << vec << '\n';
                     break;

@@ -1,4 +1,5 @@
 #include "tree.h"
+#include "struct.h"
 
 #include <iostream>
 

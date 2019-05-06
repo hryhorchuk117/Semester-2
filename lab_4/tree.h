@@ -31,6 +31,13 @@ struct binaryNode {
     binaryNode* right;
 };
 
+//struct for block 5
+struct binaryTree {
+    int data;
+    bool isLeft;
+    int indexRight;
+};
+
 int randomInt(int begin, int end) {
     std::random_device rd;
     std::mt19937_64 gen(rd());
@@ -138,4 +145,37 @@ void addBinary(int add, binaryNode* head) {
     }
 
     addBinary(add, head->right);
+}
+
+int size(binaryNode* head) {
+    int count = 1;
+
+    if (head->left) {
+        count += size(head->left);
+    }
+
+    if (head->right) {
+        count += size(head->right);
+    }
+
+    return count;
+}
+
+std::vector<binaryTree> presentation(binaryNode* head, std::vector<binaryTree>& res) {
+    bool isLeft = head->left;
+    int indexRight = -1;
+    if (head->right) {
+        indexRight = res.size() + size(head->left);
+    }
+    res.push_back({head->data, isLeft, indexRight});
+
+    if (head->left) {
+        presentation(head->left, res);
+    }
+
+    if (head->right) {
+        presentation(head->right, res);
+    }
+
+    return res;
 }

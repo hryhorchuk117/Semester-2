@@ -38,6 +38,11 @@ struct binaryTree {
     int indexRight;
 };
 
+std::ostream& operator << (std::ostream& out, const binaryTree& tree) {
+    out << tree.data << " " << tree.isLeft << " " <<tree.indexRight;
+    return out;
+}
+
 int randomInt(int begin, int end) {
     std::random_device rd;
     std::mt19937_64 gen(rd());
@@ -178,4 +183,13 @@ std::vector<binaryTree> presentation(binaryNode* head, std::vector<binaryTree>& 
     }
 
     return res;
+}
+
+template <class T>
+std::ostream& operator << (std::ostream& out, const std::vector<T>& vec) {
+    for (const auto& item : vec) {
+        out << item << '\n';
+    }
+
+    return out;
 }

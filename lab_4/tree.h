@@ -57,11 +57,11 @@ bool randomTrue(double p) {
 
 template <class node>
 void addNode(int newData, double p, node* curr) {
-    if (randomTrue(p) || curr->next.empty()) {
+    if (curr->next.empty() || randomTrue(p)) {
         node* newNode = new node(newData);
         curr->next.push_back(newNode);
     } else {
-        int k = randomInt(0, curr->next.size());
+        int k = randomInt(0, curr->next.size() - 1);
         addNode(newData, p, curr->next[k]);
     }
 }
@@ -112,21 +112,25 @@ void deletePointer(node* head, node* del) {
 }
 
 template <class node>
-void deleteNode(node* head, int delData, double p) {
+void deleteNode(node*& head, int delData, double p) {
     if (head->data == delData) {
         node* newHead = new node(head->next[0]->data);
         for (int i = 1; i < head->next.size(); ++i) {
             addTree(head->next[i], p, newHead);
         }
         head = newHead;
+        return;
     }
 
-    std::vector<node*> res = findNode(delData, head, res);
-    for (auto del : res) {
-        deletePointer(head, del);
-        for (auto item : del->next) {
+    std::vector<node*> find;
+    find = findNode(delData, head, find);
+    while(!find.empty()) {
+        deletePointer(head, find[0]);
+        for (auto item : find[0]->next) {
             addTree(item, p, head);
         }
+        find = {};
+        find = findNode(delData, head, find);
     }
 }
 
@@ -170,7 +174,11 @@ std::vector<binaryTree> presentation(binaryNode* head, std::vector<binaryTree>& 
     bool isLeft = head->left;
     int indexRight = -1;
     if (head->right) {
-        indexRight = res.size() + size(head->left);
+        if (!head->left) {
+            indexRight = res.size() + 1;
+        } else {
+            indexRight = res.size() + size(head->left) + 1;
+        }
     }
     res.push_back({head->data, isLeft, indexRight});
 

@@ -7,6 +7,8 @@
 
 struct node23 {
 
+    explicit node23();
+
     explicit node23(point);
 
     explicit node23(point, node23*);
@@ -24,6 +26,8 @@ struct node23 {
 
     void becomeNode2(point, node23*, node23*);
 
+    bool leaf();
+
     node23* insert(node23*, point);
 
     node23* insertRandom(int);
@@ -35,6 +39,16 @@ struct node23 {
     std::vector<node23*> find(node23*, point, double, std::vector<node23*>&);
 
     void printInOrder(node23* curr);
+
+    node23* searchMin(node23*);
+
+    node23* remove(node23*, point);
+
+    node23* fix(node23*);
+
+    node23* redistribute(node23*);
+
+    node23* merge(node23*);
 };
 
 

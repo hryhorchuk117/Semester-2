@@ -69,7 +69,7 @@ int list::number(point p) {
     return res;
 }
 
-void list::remove(point p) {
+void list::erase(point p) {
 
     int k = number(p);
 
@@ -91,7 +91,7 @@ void list::remove(point p) {
     }
 }
 
-node* list::get(point find){
+node* list::find(point find){
     node* curr = head;
     while (curr) {
         if (curr->value == find) {
@@ -102,7 +102,7 @@ node* list::get(point find){
     return nullptr;
 }
 
-std::vector<node*> list::getVector(point find, double mistake) {
+std::vector<node*> list::find(point find, double mistake) {
     node* curr = head;
     std::vector<node*> res;
     while (curr) {

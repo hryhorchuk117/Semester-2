@@ -24,14 +24,14 @@ void vec::addRandom(int k) {
 }
 
 void vec::erase(point p) {
-    vect.erase(get(p));
+    vect.erase(find(p));
 }
 
-iter vec::get(point p) {
+iter vec::find(point p) {
     return std::find(begin(vect), end(vect), p);
 }
 
-std::vector<iter> vec::getVector(point p, double mistake) {
+std::vector<iter> vec::find(point p, double mistake) {
     std::vector<iter> res;
     for (auto it = begin(vect); it < end(vect); ++it) {
         if (mistake > std::max((*it).distance() - p.distance(), p.distance() - (*it).distance())) {
@@ -53,6 +53,10 @@ void vec::printInOrder() {
     for (auto item : copy) {
         std::cout << item << "\n";
     }
+}
+
+std::vector<point> vec::getVec() {
+  return vect;
 }
 
 /*template <class func>

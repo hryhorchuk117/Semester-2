@@ -28,11 +28,11 @@ public:
 
     int number(point);
 
-    void remove(point);
+    void erase(point);
 
-    node* get(point);
+    node* find(point);
 
-    std::vector<node*> getVector(point, double);
+    std::vector<node*> find(point, double);
 
     int lengthGet();
 

@@ -19,9 +19,9 @@ public:
 
     void erase(point);
 
-    iter get(point);
+    iter find(point);
 
-    std::vector<iter> getVector(point, double);
+    std::vector<iter> find(point, double);
 
     void print();
 
@@ -32,7 +32,7 @@ public:
         std::vector<std::pair<iter, point>> copy;
 
         for (auto it = begin(vect); it < end(vect); ++it) {
-            copy.push_back({it, *it});
+            copy.emplace_back(it, *it);
         }
 
         std::sort(begin(copy), end(copy),
@@ -43,6 +43,8 @@ public:
             f(item.first);
         }
     }
+
+    std::vector<point> getVec();
 
 private:
     std::vector<point> vect;

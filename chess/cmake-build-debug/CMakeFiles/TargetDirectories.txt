@@ -1,0 +1,3 @@
+/home/hryhorchuk117/CLionProjects/chess_try2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/hryhorchuk117/CLionProjects/chess_try2/cmake-build-debug/CMakeFiles/chess_try2.dir
+/home/hryhorchuk117/CLionProjects/chess_try2/cmake-build-debug/CMakeFiles/edit_cache.dir

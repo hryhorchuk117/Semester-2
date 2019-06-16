@@ -29,9 +29,9 @@ std::istream& operator>>(std::istream& in, std::vector<T>& vec) {
 
 int main() {
 
-    vector<int> vec = {1, 4, 2, 5 ,3, 10, 6, 9, 8 ,7};
-    flashSort(vec, begin(vec), end(vec));
-    cout << vec << endl;
+    //vector<int> vec = {1, 4, 2, 5 ,3, 10, 6, 9, 8 ,7};
+    //flashSort(vec, begin(vec), end(vec));
+    //cout << vec << endl;
 
     ifstream in("demo.txt");
     string type;
@@ -52,16 +52,14 @@ int main() {
         }
     }
 
-    if (type == "B") {
-        ofstream out("/home/maksimka117/CLionProjects/Semester-2/lab_3c/benchmark_3c.txt");
-        out << std::setw(9) << "#" << std::setw(12) << "flash" << endl;
+    if (type == "Benchmark") {
+        ofstream out("benchmark_3c.txt");
+        out << std::setw(9) << "#" << std::setw(12) << "flash" << setw(12) << "std::sort" << endl;
 
         int N = 256;
         std::vector<std::vector<int>> vec;
         for (int i = 1; i <= N; i *= 2) {
-            cout << i;
             Benchmark(i, vec);
-            cout << i;
         }
     }
 

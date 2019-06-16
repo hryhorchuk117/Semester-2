@@ -129,6 +129,7 @@ void deleteNode(node*& head, int delData, double p) {
         for (auto item : find[0]->next) {
             addTree(item, p, head);
         }
+        delete find[0];
         find = {};
         find = findNode(delData, head, find);
     }

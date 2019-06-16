@@ -1,0 +1,3 @@
+/home/hryhorchuk117/Semester-2/lab_3c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/hryhorchuk117/Semester-2/lab_3c/cmake-build-debug/CMakeFiles/lab_3c.dir
+/home/hryhorchuk117/Semester-2/lab_3c/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lab_3c.dir/main.cpp.o  -o lab_3c 

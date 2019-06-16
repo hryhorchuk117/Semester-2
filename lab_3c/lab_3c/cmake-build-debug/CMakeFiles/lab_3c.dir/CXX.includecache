@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hryhorchuk117/Semester-2/lab_3c/benchmark.h
+flashsort.h
+/home/hryhorchuk117/Semester-2/lab_3c/flashsort.h
+algorithm
+-
+chrono
+-
+fstream
+-
+iomanip
+-
+random
+-
+
+/home/hryhorchuk117/Semester-2/lab_3c/flashsort.h
+vector
+-
+math.h
+-
+iostream
+-
+
+/home/hryhorchuk117/Semester-2/lab_3c/main.cpp
+flashsort.h
+/home/hryhorchuk117/Semester-2/lab_3c/flashsort.h
+benchmark.h
+/home/hryhorchuk117/Semester-2/lab_3c/benchmark.h
+iostream
+-
+vector
+-
+fstream
+-
+iomanip
+-
+

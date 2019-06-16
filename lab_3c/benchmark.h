@@ -43,7 +43,7 @@ void Benchmark(int n, std::vector<std::vector<int>>& vec) {
             vec.push_back(randomVector(10000));
         }
     }
-    std::fstream out("/home/maksimka117/CLionProjects/Semester-2/lab_3c/benchmark_3c.txt", std::ios::app);
+    std::fstream out("benchmark_3c.txt", std::ios::app);
 
     out  << std::setw(9) << n
          << std::setw(12) << testSort(vec) << std::endl;

@@ -62,13 +62,13 @@ void writeBenchmark(ofstream& out) {
 }
 
 int main() {
-    ifstream in("/home/hryhorchuk117/CLionProjects/lab6/demo.txt");
+    ifstream in("demo.txt");
     string mode;
     bool interactive = true;
     cin >> mode;
 
     if (mode == "Benchmark") {
-        ofstream out("/home/hryhorchuk117/CLionProjects/lab6/benchmark.txt");
+        ofstream out("benchmark.txt");
         writeBenchmark(out);
         benchmark(BENCHMARK);
         return 0;

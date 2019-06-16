@@ -102,7 +102,7 @@ double testPrintTree(type& test) {
 }
 
 void benchmark(int n) {
-    std::ofstream out("/home/hryhorchuk117/CLionProjects/lab6/benchmark.txt", std::ios::app);
+    std::ofstream out("benchmark.txt", std::ios::app);
     for (int i = 1; i <= n; i*=2) {
         list testList;
         vec testVec;

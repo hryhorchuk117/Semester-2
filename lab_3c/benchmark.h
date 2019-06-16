@@ -2,8 +2,9 @@
 
 #include "flashsort.h"
 
-#include <fstream>
+#include <algorithm>
 #include <chrono>
+#include <fstream>
 #include <iomanip>
 #include <random>
 
@@ -23,7 +24,10 @@ std::vector<int> randomVector(int size) {
 }
 
 template <class T>
-double testSort(std::vector<T>& vec) {
+std::pair<double, double> testSort(std::vector<T>& vec) {
+    std::pair<double, double> res{};
+
+    std::vector<T> copy = vec;
     auto start = std::chrono::high_resolution_clock::now();
     for (auto item : vec) {
         flashSort(item, begin(item), end(item));
@@ -32,7 +36,19 @@ double testSort(std::vector<T>& vec) {
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
 
-    return elapsed.count();
+    res.first = elapsed.count();
+
+    start = std::chrono::high_resolution_clock::now();
+    for (auto item : vec) {
+        std::sort(begin(item), end(item));
+    }
+
+    finish = std::chrono::high_resolution_clock::now();
+    elapsed = finish - start;
+
+    res.second = elapsed.count();
+
+    return res;
 }
 
 void Benchmark(int n, std::vector<std::vector<int>>& vec) {
@@ -46,5 +62,6 @@ void Benchmark(int n, std::vector<std::vector<int>>& vec) {
     std::fstream out("benchmark_3c.txt", std::ios::app);
 
     out  << std::setw(9) << n
-         << std::setw(12) << testSort(vec) << std::endl;
+         << std::setw(12) << testSort(vec).first
+         << std::setw(12) << testSort(vec).second << std::endl;
 }

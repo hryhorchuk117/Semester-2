@@ -48,13 +48,13 @@ void writeBenchmark(std::ofstream& out) {
 
 int main() {
 
-    ifstream in("/home/hryhorchuk117/CLionProjects/lab5/demo.txt");
+    ifstream in("demo.txt");
     string mode;
     bool interactive = true;
     cin >> mode;
 
     if (mode == "Benchmark") {
-        std::ofstream out("/home/hryhorchuk117/CLionProjects/lab5/benchmark.txt");
+        std::ofstream out("benchmark.txt");
         writeBenchmark(out);
         benchmark(BENCHMARK);
         return 0;

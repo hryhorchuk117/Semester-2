@@ -27,7 +27,7 @@ void read(T& item, bool interactive, ifstream& in) {
 }
 
 int main() {
-    ifstream in("/home/hryhorchuk117/CLionProjects/lab4/demo.txt");
+    ifstream in("demo.txt");
     string type;
     cin >> type;
     bool interactive = true;

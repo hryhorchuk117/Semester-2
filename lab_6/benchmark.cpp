@@ -113,35 +113,35 @@ void benchmark(int n) {
         std::vector<avlNode*> findAvl;
 
         out << std::setw(8) << i
-            << std::setw(17) << testAdd(testList, i)
-            << std::setw(12) << testAdd(testVec, i)
-            << std::setw(12) << testAdd(testTree, i)
-            << std::setw(12) << testAdd(testAvl, i);
+            << std::setw(21) << testAdd(testList, i) << " sec"
+            << std::setw(16) << testAdd(testVec, i) << " sec"
+            << std::setw(16) << testAdd(testTree, i) << " sec"
+            << std::setw(16) << testAdd(testAvl, i) << " sec";
 
         testList.insert({100, 200, 300}, i / 2);
         testVec.append( {100, 200, 300});
         testTree.add(testTree.getRoot(), {100, 200, 300});
         testAvl.add(testAvl.getRoot(), {100, 200, 300});
 
-        out << std::setw(17) << testFind(testList, {100, 200, 300})
-            << std::setw(12) << testFind(testVec, {100, 200, 300})
-            << std::setw(12) << testFindTree(testTree, {100, 200, 300}, findTree)
-            << std::setw(12) << testFindTree(testAvl, {100, 200, 300}, findAvl)
+        out << std::setw(21) << testFind(testList, {100, 200, 300}) << " sec"
+            << std::setw(16) << testFind(testVec, {100, 200, 300}) << " sec"
+            << std::setw(16) << testFindTree(testTree, {100, 200, 300}, findTree) << " sec"
+            << std::setw(16) << testFindTree(testAvl, {100, 200, 300}, findAvl) << " sec"
 
-            << std::setw(17) << testFindMist(testList, {100, 200, 300}, 100)
-            << std::setw(12) << testFindMist(testVec, {100, 200, 300}, 100)
-            << std::setw(12) << testFindMistTree(testTree, {100, 200, 300}, findTree, 100)
-            << std::setw(12) << testFindMistTree(testAvl, {100, 200, 300}, findAvl, 100)
+            << std::setw(21) << testFindMist(testList, {100, 200, 300}, 100) << " sec"
+            << std::setw(16) << testFindMist(testVec, {100, 200, 300}, 100) << " sec"
+            << std::setw(16) << testFindMistTree(testTree, {100, 200, 300}, findTree, 100) << " sec"
+            << std::setw(16) << testFindMistTree(testAvl, {100, 200, 300}, findAvl, 100) << " sec"
 
-            << std::setw(17) << testPrint(testList)
-            << std::setw(12) << testPrint(testVec)
-            << std::setw(12) << testPrintTree(testTree)
-            << std::setw(12) << testPrintTree(testAvl)
+            << std::setw(21) << testPrint(testList) << " sec"
+            << std::setw(16) << testPrint(testVec) << " sec"
+            << std::setw(16) << testPrintTree(testTree) << " sec"
+            << std::setw(16) << testPrintTree(testAvl) << " sec"
 
-            << std::setw(17) << testErase(testList, {100, 200, 300})
-            << std::setw(12) << testErase(testVec, {100, 200, 300})
-            << std::setw(12) << testErase(testTree, {100, 200, 300})
-            << std::setw(12) << testErase(testAvl, {100, 200, 300});
+            << std::setw(21) << testErase(testList, {100, 200, 300}) << " sec"
+            << std::setw(16) << testErase(testVec, {100, 200, 300}) << " sec"
+            << std::setw(16) << testErase(testTree, {100, 200, 300}) << " sec"
+            << std::setw(16) << testErase(testAvl, {100, 200, 300}) << " sec";
 
         out << '\n';
     }

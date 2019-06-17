@@ -63,9 +63,9 @@ void Benchmark(int n, std::vector<std::vector<Date>>& vec) {
 
 
     out  << std::setw(9) << n
-         << std::setw(12) << testSort(vec, selectionSort_ptr)
-         << std::setw(12) << testSort(vec, quickSort_ptr)
-         << std::setw(12) << testSort(vec, mergeSort_ptr)
-         << std::setw(12) << testSort(vec, combinedSort_ptr)
-         << std::setw(12) << testSort(vec, sort_ptr) << std::endl;
+         << std::setw(16) << testSort(vec, selectionSort_ptr) << "sec"
+         << std::setw(16) << testSort(vec, quickSort_ptr) << "sec"
+         << std::setw(16) << testSort(vec, mergeSort_ptr) << "sec"
+         << std::setw(16) << testSort(vec, combinedSort_ptr) << "sec"
+         << std::setw(16) << testSort(vec, sort_ptr) << "sec" << std::endl;
 }

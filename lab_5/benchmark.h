@@ -84,13 +84,13 @@ void benchmark(int n) {
             graphEdges testEdges = convert(testMatrix);
             out << std::setw(9) << i
                 << std::setw(9) << currEdges
-                << std::setw(12) << testCreate(i, currEdges, true)
-                << std::setw(12) << testComponents(testMatrix)
-                << std::setw(12) << testComponents(testEdges)
-                << std::setw(12) << testFloyd(testMatrix)
-                << std::setw(12) << testFloyd(testEdges)
-                << std::setw(12) << testSpanning(testMatrix)
-                << std::setw(12) << testSpanning(testEdges) << '\n';
+                << std::setw(16) << testCreate(i, currEdges, true) << "sec"
+                << std::setw(16) << testComponents(testMatrix) << "sec"
+                << std::setw(16) << testComponents(testEdges) << "sec"
+                << std::setw(16) << testFloyd(testMatrix) << "sec"
+                << std::setw(16) << testFloyd(testEdges) << "sec"
+                << std::setw(16) << testSpanning(testMatrix) << "sec"
+                << std::setw(16) << testSpanning(testEdges) << "sec\n";
         }
     }
 

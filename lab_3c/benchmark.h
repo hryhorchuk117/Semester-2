@@ -62,6 +62,6 @@ void Benchmark(int n, std::vector<std::vector<int>>& vec) {
     std::fstream out("benchmark_3c.txt", std::ios::app);
 
     out  << std::setw(9) << n
-         << std::setw(12) << testSort(vec).first
-         << std::setw(12) << testSort(vec).second << std::endl;
+         << std::setw(16) << testSort(vec).first << "sec"
+         << std::setw(16) << testSort(vec).second << "sec" << std::endl;
 }
